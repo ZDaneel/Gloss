@@ -1,0 +1,47 @@
+# FastAPI Project
+
+# Python virtual environment
+venv/
+
+# Compiled Python files
+*.pyc
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Dependency directories
+__pycache__/
+dist/
+build/
+*.egg-info/
+
+# uploads directory
+uploads/
+
+# IDE files
+.vscode/
+.idea/
+
+# Editor backup files
+*~
+
+# Cache files
+*.cache
+
+# Database files
+*.db
+
+# Test coverage reports
+htmlcov/
+
+# Documentation
+docs/_build/
+
+# Distribution files
+*.egg
+*.egg-info
+dist/
+build/

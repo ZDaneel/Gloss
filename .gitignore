@@ -1,0 +1,22 @@
+# Frontend
+gloss-web/node_modules/
+gloss-web/.nuxt/
+gloss-web/.output/
+gloss-web/.data/
+gloss-web/.nitro/
+gloss-web/.cache/
+gloss-web/dist/
+gloss-web/.env
+
+# Backend
+gloss-api/__pycache__/
+gloss-api/venv/
+gloss-api/.venv/
+gloss-api/*.pyc
+gloss-api/*.log
+gloss-api/.env
+gloss-api/uploads/
+
+# OS
+.DS_Store
+Thumbs.db
