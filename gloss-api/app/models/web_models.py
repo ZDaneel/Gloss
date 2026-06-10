@@ -21,6 +21,7 @@ class ParagraphRequest(BaseModel):
     chat_id: int
     paragraph_number: int
     question: str
+    source_text: str
 
 class Option(BaseModel):
     uuid: int
@@ -30,6 +31,7 @@ class Option(BaseModel):
     past_questions: List[str]
     past_answers: List[str]
     paragraph_number: int
+    source_text: str
 
 
 class ChatRequest(BaseModel):

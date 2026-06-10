@@ -48,8 +48,13 @@ export default defineNuxtPlugin(() => {
     return text;
   };
 
+  // 剥离 AI 回答末尾的 [n]: "..." 引文列表，这部分只在抽屉中展示
+  const stripCitationList = (text) => {
+    return text.replace(/\n{1,2}(\[\d+\]:\s*[""“”].+?[""“”]\n?)+$/s, "").trimEnd();
+  };
+
   const renderWithFootnotes = (text, index) => {
-    let processedText = text;
+    let processedText = stripCitationList(text);
     try {
       processedText = processLatex(processedText);
 

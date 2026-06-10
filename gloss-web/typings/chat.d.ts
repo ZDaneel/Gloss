@@ -23,6 +23,8 @@ declare namespace Chat {
     tableEnhanceOpen: boolean;
     paragraphNum: number;
     paperTitle?: string;
+    sourceText?: string;
+    annotatedText?: string;
   }
 
   interface ChatState {

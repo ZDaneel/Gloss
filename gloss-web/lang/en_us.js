@@ -1,15 +1,13 @@
 export default {
     home: {
         appName: 'Gloss',
-        emptyContent: 'Please input text',
-        emptyTags: 'Please add link',
+        emptyContent: 'Please enter your question',
+        emptySource: 'Please paste some text first',
         uploadFailed: 'Upload failed, please try again',
-        fileExist: 'File already exists',
-        fileTypeWrong: 'Please upload PDF file',
-        linkWrong: 'Please input the correct link',
-        linkUnavailable: 'Link unavailable',
-        linkFailed: 'Link invalid',
         sendFailed: 'Send failed',
+        sourcePlaceholder: 'Paste the text you want to read...',
+        questionPlaceholder: 'Enter your first question...',
+        startReading: 'Start Reading',
     },
     sideBar: {
         addTip: 'Add Chat',

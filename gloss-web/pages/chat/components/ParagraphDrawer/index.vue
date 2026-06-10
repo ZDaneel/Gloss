@@ -140,19 +140,20 @@ const stopResizing = (event) => {
   }
 };
 
-// 判断当前段落是否需要高亮显示
+// 判断当前段落是否包含被点击的 [n] 标记
 const isHighlighted = (index) => {
-  return props.paragraphs[index].startsWith(`[${props.highlightNumber}]`);
+  const p = props.paragraphs?.[index];
+  if (!p) return false;
+  return new RegExp(`\\[${props.highlightNumber}\\]`).test(p);
 };
 
 // 在抽屉打开时滚动到高亮的段落
 const scrollToHighlighted = () => {
   nextTick(() => {
     const highlightedIndex = props.paragraphs.findIndex((paragraph) =>
-      paragraph.startsWith(`[${props.highlightNumber}]`)
+      new RegExp(`\\[${props.highlightNumber}\\]`).test(paragraph ?? "")
     );
     if (highlightedIndex !== -1 && paragraphRefs.value[highlightedIndex]) {
-      // 计算需要向上移动的距离
       const offsetTop =
         drawerContent.value.scrollTop +
         paragraphRefs.value[highlightedIndex].getBoundingClientRect().top -
@@ -205,12 +206,11 @@ const processedParagraphs = computed(() => {
   if (!props.paragraphs) return [];
   return props.paragraphs.map((paragraph) => {
     if (typeof paragraph !== "string") return { number: "", content: "" };
-    const match = paragraph.match(/^\[(\d+)\](.*)$/s);
-    const content = match ? match[2] : paragraph;
-
+    const numbers = [...paragraph.matchAll(/\[(\d+)\]/g)].map((m) => m[1]);
+    const content = paragraph.replace(/\s*\[\d+\]/g, "").trim();
     return {
-      number: match ? match[1] : "",
-      content: content,
+      number: numbers.join(" "),
+      content,
     };
   });
 });

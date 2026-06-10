@@ -421,6 +421,7 @@ const loadParagraphs = async (
       chat_id: chat_id,
       paragraph_number: history.value?.paragraphNum ?? 5,
       question: question,
+      source_text: history.value?.sourceText ?? "",
       signal: controller.signal,
     });
     updateChatSome(uuid, dataSources.value.length - 1, {
@@ -429,6 +430,7 @@ const loadParagraphs = async (
     });
     chatStore.updateHistory(+uuid, {
       paperTitle: response.data.paperTitle,
+      annotatedText: response.data.annotatedText,
       updatedAt: new Date().toISOString(),
     });
     paragraphs.value = response.data.paragraphs;
@@ -469,6 +471,7 @@ const fetchChatAPI = async (
         past_answers: past_answers,
         paragraph_number: history.value?.paragraphNum ?? 5,
         need_table: history.value?.tableEnhanceOpen ?? false,
+        source_text: history.value?.annotatedText || history.value?.sourceText || "",
       },
       signal: controller.signal,
       onDownloadProgress: ({ event }) => {

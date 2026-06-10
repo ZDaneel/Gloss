@@ -1,15 +1,13 @@
 export default {
     home: {
         appName: 'Gloss',
-        emptyContent: '请输入文本',
-        emptyTags: '请添加链接',
+        emptyContent: '请输入你的问题',
+        emptySource: '请先粘贴原文',
         uploadFailed: '上传失败，请重试',
-        fileExist: '文件已存在',
-        fileTypeWrong: '请上传PDF文件',
-        linkWrong: '请输入正确的链接',
-        linkUnavailable: '链接不可用',
-        linkFailed: '链接无效',
         sendFailed: '发送失败',
+        sourcePlaceholder: '将你想精读的文本粘贴到这里...',
+        questionPlaceholder: '输入你的第一个问题...',
+        startReading: '开始解读',
     },
     sideBar: {
         addTip: '新增',

@@ -60,6 +60,14 @@ def get_resources_by_history_id_and_name(
     )
 
 
+def get_resource_by_history_id(db: Session, history_id: int):
+    return (
+        db.query(chat_models.Resources)
+        .filter(chat_models.Resources.history_id == history_id)
+        .first()
+    )
+
+
 def delete_resources(db: Session, resources_id: int):
     db.query(chat_models.Resources).filter(
         chat_models.Resources.id == resources_id
