@@ -193,11 +193,10 @@ pnpm run dev       # http://localhost:3006
 
 ## Roadmap
 
-- [ ] File upload support (PDF, Word, Markdown)
+- [ ] PDF / Word / Markdown file upload
+- [ ] Long-text support via pgvector RAG (chunk + embed + retrieve)
 - [ ] Multi-document sessions with cross-text citation
-- [ ] Concept graph extraction (Obsidian-style knowledge links)
-- [ ] Mind map generation from session content
-- [ ] Angular rewrite for enterprise deployment
+- [ ] Concept graph extraction (visualize key term relationships)
 
 ---
 
@@ -209,4 +208,4 @@ Data structures and TypeScript interface definitions adapted from [chatgpt-web](
 
 ## License
 
-MIT © [炸蛋纽er](https://github.com/zdaneel)
+MIT © [ZDaneel](https://github.com/zdaneel)
