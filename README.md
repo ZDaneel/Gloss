@@ -152,45 +152,6 @@ pnpm run dev       # http://localhost:3006
 
 ---
 
-## Database Schema
-
-### `history` — Sessions
-
-| Column | Type | Notes |
-|--------|------|-------|
-| id | bigint PK | Snowflake ID |
-| paper_title | varchar(255) | session title |
-| created_at | timestamptz | default now() |
-
-### `chats` — Messages
-
-| Column | Type | Notes |
-|--------|------|-------|
-| id | bigint PK | Snowflake ID |
-| chat_id | bigint | message sequence |
-| history_id | bigint FK | → history.id |
-| question | text | user prompt |
-| content | text | AI response |
-| paragraphs | text[] | cited source passages |
-| temperature | numeric(10,2) | |
-| past_questions | text[] | context window |
-| past_answers | text[] | context window |
-| error_message | text | |
-| is_good | boolean | like / dislike |
-| created_at | timestamptz | |
-
-### `resources` — Source texts
-
-| Column | Type | Notes |
-|--------|------|-------|
-| id | bigint PK | Snowflake ID |
-| history_id | bigint FK | → history.id |
-| is_file | boolean | false = pasted text |
-| resource_name | text | pasted content |
-| created_at | timestamptz | |
-
----
-
 ## Roadmap
 
 - [ ] PDF / Word / Markdown file upload
